@@ -47,6 +47,11 @@ def main():
             if check:
                 print("Game over!")
                 sys.exit()
+            for bullet in shots:
+                shot_check = bullet.detect_collision(asteroid)
+                if shot_check:
+                    bullet.kill()
+                    asteroid.kill()
         
         pygame.display.flip()
         
